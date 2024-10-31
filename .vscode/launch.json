@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Next.js + Bun: debug server-side",
+        "type": "node-terminal",
+        "request": "launch",
+        "command": "npm run dev",
+        "runtime": "bun",
+        "runtimeArgs": [],
+        "program": "${workspaceFolder}/server.js",
+        "cwd": "${workspaceFolder}"
+      },
+      {
+        "name": "Next.js: debug client-side",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:5020"
+      },
+      {
+        "name": "Next.js + Bun: debug full stack",
+        "type": "node-terminal",
+        "request": "launch",
+        "command": "npm run dev",
+        "runtime": "bun",
+        "runtimeArgs": [],
+        "program": "${workspaceFolder}/server.js",
+        "cwd": "${workspaceFolder}",
+        "serverReadyAction": {
+          "pattern": "- Local:.+(https?://.+)",
+          "uriFormat": "%s",
+          "action": "debugWithChrome"
+        }
+      }
+   
+    ]
+  }
+  
